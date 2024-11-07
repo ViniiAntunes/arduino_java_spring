@@ -1,5 +1,5 @@
 package com.example.demo.program;
-import com.example.demo.entities.Acesso;
+import com.example.demo.controller.C_ValidaSenha;
 import com.fazecast.jSerialComm.*;
 
 import java.io.BufferedReader;
@@ -50,7 +50,7 @@ public class ArduinoSerialCommunication {
                 if (input.ready()) {
                     String inputLine = input.readLine();
                     System.out.println("Dados recebidos: " + inputLine);
-                    String outputString = Acesso.ChecarSenha(inputLine);
+                    String outputString = C_ValidaSenha.ChecarSenha(inputLine);
                     if(!outputString.isEmpty()) {
                         output.write(outputString.getBytes());
                     }
